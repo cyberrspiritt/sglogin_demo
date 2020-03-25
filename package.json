@@ -1,0 +1,44 @@
+{
+  "name": "sglogin-decryptor",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "~1.4.3",
+    "debug": "^4.1.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.2.1",
+    "lodash": "^4.17.11",
+    "morgan": "^1.9.1",
+    "node-jose": "^1.1.0",
+    "pug": "^2.0.0-rc.4",
+    "querystring": "^0.2.0",
+    "superagent-bluebird-promise": "^4.1.0",
+    "bluebird": "^3.4.6",
+    "colors": "^1.2.1",
+    "jose": "^0.3.2",
+    "nonce": "^1.0.4",
+    "serve-favicon": "^2.5.0",
+    "superagent": "^3.1.0",
+    "urlsafe-base64": "^1.0.0"
+  },
+  "description": "This is a demo application meant to illustrate how to integrate your application with [MyInfo APIs](https://www.ndi-api.gov.sg)",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ndi-trusted-data/myinfo-demo-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ndi-trusted-data/myinfo-demo-app/issues"
+  },
+  "homepage": "https://github.com/ndi-trusted-data/myinfo-demo-app#readme"
+}

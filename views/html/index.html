@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Sample SG Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400%7CPoppins:400,500,600" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/main.css">
+
+     <script src="http://stg-saml.singpass.gov.sg/spcpextrest/resources/js/spcp-pvt-qr-v1.0.0.js"></script>
+</head>
+
+<body class="myinfo">
+<section class="hero-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 d-flex align-items-center full-screen-height">
+                <div class="hero-content-div">
+                    <div class="hero-content">
+                        <h1>Singpass Application</h1>
+                        <hr>
+                        <p>To start the SingPass login and consent process, scan the QR Code with Singpass Mobile App.</p>
+                    </div>
+
+                    <div id="qr_wrapper"></div>
+
+                    <hr>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 d-flex align-items-center full-screen-height mobile-hidden">
+                <div class="right-img">
+                    <div data-depth="0.40" class="layer">
+                        <div class="right-img-bg-1"></div>
+                    </div>
+                    <div data-depth="0.30" class="layer">
+                        <div class="right-img-bg-2"></div>
+                    </div>
+                    <div data-depth="0.40" class="layer">
+                        <img class="right-img-img" src="../../images/banner-personal.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="../../vendor/jquery/jquery-3.3.1.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<script>
+    nounce = (''+Math.random()*1000000000000000+'').slice(0,15);
+    state = (''+Math.random()*1000000000000000+'').slice(0,15);
+    var OIDCParams = {
+        nonce: (''+Math.random()*1000000000000000+'').slice(0,15).toString(),
+        state: (''+Math.random()*1000000000000000+'').slice(0,15).toString(),
+        clientId: '', //@Todo: Add your Client ID and Redirect URI approved by Singpass here
+        redirectUri: '',
+        scope: 'openid',
+        responseType: 'code'
+    }
+
+    SPCPQR.init(
+        'qr_wrapper',
+        OIDCParams,
+        function() {
+            SPCPQR.refresh({nonce: (''+Math.random()*1000000000000000+'').slice(0,15), state: (''+Math.random()*1000000000000000+'').slice(0,15)});
+        }
+    );
+</script>
+</body>
+
+</html>
